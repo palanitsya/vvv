@@ -1,0 +1,36 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "VRNas" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "about-us.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  -
+    const sharp = {
+      file: "sharp-about-us",
+      width: "990",
+      height: "721",
+    }
+
+
+block main
+  main
+    +sharp(sharp).sharp--about-us
+    +intro-about-us()
+    .page-section
+      +about-us-block()
+    .page-section
+      +experience()
+    .page-section
+      +passion()
+    .page-section
+      +team()
+    .page-section
+      +partners-block()
+    .page-section.page-section--bottom
+      +subscribe()
+
+block modals

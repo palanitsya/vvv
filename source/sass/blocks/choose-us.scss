@@ -1,0 +1,31 @@
+.choose-us {
+  .section__grid {
+    grid-template-columns: 5fr 5.3fr;
+  }
+
+  .section__picture-wrapper {
+    height: unset;
+
+    @include vp-767 {
+      order: -1;
+      margin-top: 0;
+      margin-bottom: 46px;
+    }
+
+    img {
+      translate: 100px 0;
+
+      @include vp-1279 {
+        translate: unset;
+      }
+    }
+
+    &::before {
+      translate: -32% 0;
+
+      @include vp-1279 {
+        translate: -50% 0;
+      }
+    }
+  }
+}

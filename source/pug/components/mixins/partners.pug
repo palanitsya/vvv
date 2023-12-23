@@ -1,0 +1,34 @@
+mixin partners()
+  -
+    const icons = [
+      "logoipsum1",
+      "logoipsum2",
+      "logoipsum3",
+      "logoipsum4",
+      "logoipsum5",
+      "logoipsum6",
+      "logoipsum7",
+    ]
+
+  .partners
+    .partners__rainbow-wrapper
+      .partners__rainbow
+        +icon("circle", "100%", "100%", true)
+    .partners__gradient-dark
+    .partners__round
+    +icon("light-partners", "100%", "100%", true).partners__light
+    .partners__picture-wrapper
+      +picture(
+        "content/partners-block",
+        "image",
+        "png",
+        "708",
+        "555",
+        "Симметричный чувак думает."
+      )
+    .partners__elements
+      each icon in icons
+        .partners__element-wrapper
+          .partners__icon-wrapper
+            +icon(icon, "100%", "100%", true)
+

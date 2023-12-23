@@ -1,0 +1,232 @@
+.our-pricing {
+  &__grid {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 46px;
+
+    @include vp-1023 {
+      padding: 0;
+    }
+
+    @include vp-767 {
+      padding-bottom: 86px;
+    }
+  }
+
+  .text-content p {
+    max-width: 625px;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 61% 31%;
+    gap: 8%;
+    border-width: 1px;
+    border-style: solid;
+    border-image: $gradient-card;
+    border-image-slice: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 66.6%;
+      top: 40px;
+      bottom: 40px;
+      width: 1px;
+      background-color: $color-default-white;
+      opacity: 0.1;
+
+      @include vp-1023 {
+        display: none;
+      }
+    }
+
+    @include vp-1023 {
+      grid-template-areas:
+        "txt pic"
+        "txt price";
+      gap: 0 20px;
+      grid-template-rows: 1fr min-content;
+    }
+
+    @include vp-767 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &::after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $color-greyscale-black-80;
+      opacity: 0.8;
+    }
+  }
+
+  &__light {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: blur(105px);
+
+    @include vp-767 {
+      overflow-x: hidden;
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -21% -40%;
+      width: calc(826/1200*100%);
+      height: auto;
+
+      @include vp-1279 {
+        left: unset;
+        right: 0;
+        translate: 0 -50%;
+      }
+
+      @include vp-767 {
+        width: 140%;
+        right: 50%;
+        translate: 58% -37%;
+      }
+    }
+  }
+
+  &__list {
+    position: relative;
+    margin: 0;
+    padding: 54px 42px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+
+    @include vp-1023 {
+      grid-area: txt;
+      padding: 40px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 40px;
+        bottom: 40px;
+        width: 1px;
+        background-color: $color-default-white;
+        opacity: 0.1;
+      }
+    }
+
+    @include vp-767 {
+      padding: 32px 22px;
+      padding-bottom: 48px;
+
+      &::before {
+        top: unset;
+        bottom: 0;
+        right: 22px;
+        left: 22px;
+        height: 1px;
+        width: unset;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 58px;
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 42px;
+      height: 42px;
+    }
+  }
+
+  &__item-title {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: $color-default-white;
+  }
+
+  &__item-text {
+    margin-top: 10px;
+    font-weight: 400;
+  }
+
+  &__picture-wrapper {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+
+    @include vp-1023 {
+      grid-area: pic;
+    }
+
+    @include vp-767 {
+      position: relative;
+      padding-top: 40px;
+    }
+
+    picture {
+      display: flex;
+      justify-content: end;
+      align-items: end;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+      max-height: 580px;
+      object-fit: contain;
+      user-select: none;
+
+      @include vp-767 {
+        max-height: 370px;
+      }
+    }
+  }
+
+  .card-price {
+    z-index: 1;
+    position: absolute;
+    bottom: -48px;
+    left: 58.8%;
+    min-width: 26.8%;
+
+    @include vp-1023 {
+      position: static;
+      grid-area: price;
+      min-width: unset;
+    }
+
+    @include vp-767 {
+      position: absolute;
+      left: 14px;
+      bottom: -88px;
+      min-width: 320px;
+    }
+
+    @media (max-width: 429px) {
+      min-width: 82%;
+    }
+  }
+}

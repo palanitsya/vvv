@@ -14,15 +14,23 @@ block main
         src: "ui-kit.html"
       },
       {
-        name: "Главная — index.html",
+        name: "Home — index.html",
         src: "index.html"
+      },
+      {
+        name: "About us — about-us.html",
+        src: "about-us.html"
+      },
+      {
+        name: "Detail blog — detail-blog.html",
+        src: "detail-blog.html"
       },
     ]
 
   main
     .sitemap
       .container
-        img(src="https://via.placeholder.com/300x150", width="300", alt="Логотип проекта")
+        img(src="favicon/android-chrome-512x512.png", width="150", alt="Логотип проекта")
         h1 Список страниц
         ol
           each page in pages

@@ -1,0 +1,13 @@
+.titles-set {
+  .title {
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  &--center {
+    max-width: 880px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

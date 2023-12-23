@@ -3,34 +3,55 @@ mixin header(headerMods, currentUrl)
     const headerLinks = [
       {
         href: "index.html",
-        text: "Главная"
+        text: "Home"
       },
       {
-        href: "#",
-        text: "Страница 2"
+        href: "about-us.html",
+        text: "About us"
       },
       {
-        href: "#",
-        text: "Страница 3"
+        href: "index.html#our-service",
+        text: "Service"
+      },
+      {
+        href: "index.html#our-pricing",
+        text: "Pricing Plan"
+      },
+      {
+        href: "detail-blog.html",
+        text: "Blog"
       },
     ]
 
-  header.header(class=headerMods)
-    .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link in headerLinks
-              - const activeState = currentUrl === link.href
-              li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active= link.text
-                else
-                  a.main-nav__link(href=link.href)= link.text
+  header.header.header--sticky(class=headerMods, data-header="sticky", data-scroll-lock-scrollable)#main-header
+    .header__for-blur#for-blur
+      .header__wave
+        +picture(
+          "content/wave",
+          "wave",
+          "png",
+          "736",
+          "354",
+          "just decore.",
+        )(aria-hidden="true")
+
+      .container
+        .header__grid
+          if(currentUrl === "index.html")
+            +logo(true)
+          else
+            +logo()
+          nav.header__nav
+            ul.header__list
+              each link in headerLinks
+                - const activeState = currentUrl === link.href
+                li.header__item
+                  if(activeState)
+                    span.header__link.is-active= link.text
+                  else
+                    a.header__link(href=link.href data-close-menu)= link.text
+            .header__item
+              a.header__link.header__link--gradient-border(href="#main-footer" data-close-menu) Contact us
+          button.header__toggle(type="button", aria-pressed="false", data-burger)#header-toggle
+            span.visually-hidden меню
+            +icon("menu-toggle-closed", "16", "16")

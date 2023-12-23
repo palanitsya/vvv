@@ -1,0 +1,130 @@
+.our-service {
+  .container {
+    position: relative;
+  }
+
+  .our-service__light {
+    z-index: -1;
+    position: absolute;
+    top: 6px;
+    right: 0;
+    width: calc(403/1440*100%);
+    filter: blur(105px);
+
+    @include vp-767 {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      padding-bottom: calc(199/403*100%);
+    }
+  }
+
+  &__light-overflow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    svg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+
+    @include vp-767 {
+      gap: 24px;
+    }
+  }
+
+
+  &__text-grid {
+    display: grid;
+    grid-template-columns: 44.5% 54.5%;
+
+    @include vp-1023 {
+      grid-template-columns: 40% 60%;
+    }
+
+    @include vp-767 {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+
+  &__titles {
+    padding-right: 30px;
+
+    .title {
+      margin-top: 8px;
+    }
+  }
+
+  .text-content p {
+    padding-top: 6px;
+    max-width: 625px;
+
+    @include vp-1023 {
+      padding-top: 0;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px 33px;
+    padding-bottom: 136px;
+
+    @include vp-1023 {
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      padding-bottom: 60px;
+    }
+
+    @include vp-767 {
+      grid-template-columns: 1fr;
+      grid-auto-rows: 1fr;
+      padding: 0;
+    }
+
+    .info-card {
+      &:nth-child(3n + 2) {
+        transform: translateY(58px);
+
+        @include vp-1023 {
+          transform: unset;
+        }
+      }
+
+      &:nth-child(3n + 3) {
+        transform: translateY(136px);
+
+        @include vp-1023 {
+          transform: unset;
+        }
+      }
+
+      @include vp-1023 {
+        &:nth-child(2n) {
+          transform: translateY(60px);
+
+          @include vp-767 {
+            transform: unset;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,140 @@
+.video {
+  position: relative;
+  border-radius: 12px 12px 0 0;
+  background-color: $color-default-white;
+  clip-path: inset(1px 1px);
+  overflow: hidden;
+  user-select: none;
+
+  @include vp-767 {
+    border-radius: 12px;
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+  }
+
+  &::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $gradient;
+    opacity: 0.2;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: calc(522 / 1200 * 100%);
+
+    @include vp-767 {
+      padding-bottom: calc(254 / 398 * 100%);
+    }
+  }
+
+  &__btn-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  &__play-btn {
+    z-index: 3;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+    transition: width $trans-default, height  $trans-default, transform $trans-default;
+    margin: 0 auto;
+    pointer-events: all;
+
+    svg {
+      opacity: 0.3;
+      transition: opacity $trans-default;
+    }
+
+    @include vp-1023 {
+      width: 70px;
+      height: 70px;
+    }
+
+    @include vp-767 {
+      width: 40px;
+      height: 40px;
+    }
+
+    @include hover-focus {
+      svg {
+        opacity: 0.8;
+      }
+      transform: scale(1.25);
+    }
+  }
+
+  &--played {
+    &::before,
+    .video__play-btn,
+    .video__description {
+      display: none;
+    }
+  }
+
+  &--ended {
+    &::before {
+      display: block;
+      opacity: 0.9;
+    }
+  }
+
+  &__description {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 52px 34px;
+    color: $color-default-white;
+
+    @include vp-767 {
+      padding: 20px 16px;
+    }
+  }
+
+  &__description-text {
+    margin-top: 9px;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: -0.72px;
+
+    @include vp-767 {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+  }
+}
