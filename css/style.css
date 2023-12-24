@@ -661,7 +661,6 @@ button,
   -webkit-transition: height 0.3s ease;
   transition: height 0.3s ease;
   z-index: 2;
-  background-color: rgba(255, 0, 0, 0.1);
 }
 
 .header--sticky {
