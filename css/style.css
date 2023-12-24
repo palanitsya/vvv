@@ -661,7 +661,6 @@ button,
   -webkit-transition: height 0.3s ease;
   transition: height 0.3s ease;
   z-index: 2;
-  background-color: rgba(255, 0, 0, 0.1);
 }
 
 .header--sticky {
@@ -695,7 +694,6 @@ button,
   -webkit-transition: height 0.3s ease, width 0.3s ease;
   transition: height 0.3s ease, width 0.3s ease;
   overflow: hidden;
-  background-color: rgba(255, 0, 0, 0.1);
 }
 
 .header__wave svg {
