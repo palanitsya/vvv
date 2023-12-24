@@ -35,14 +35,14 @@ mixin intro()
                   "50",
                   "50",
                   "Фото счастливого клиента."
-                )(loading="lazy")
+                )
 
             .intro__photos-description
               .intro__how-many 32k+
               .intro__who-how-many Happy Client
 
           .intro__movable
-            +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)(data-parallax-mouse, data-movement='6', loading="lazy")
+            +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)(data-parallax-mouse, data-movement='6')
 
         .intro__picture-wrapper
           .intro__light
@@ -56,5 +56,5 @@ mixin intro()
               "526",
               "626",
               "Чувак с надетыми черными виар-очками.",
-            )(loading="lazy")
+            )
       +personalisation()
