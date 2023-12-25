@@ -3,6 +3,8 @@
 
   color: $color-default-white;
 
+  background-color: rgba(255, 0, 0, 0.1);
+
   transition: height $trans-default;
 
   &--sticky {
