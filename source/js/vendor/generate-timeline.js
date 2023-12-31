@@ -66,4 +66,6 @@ const generateTimeline = () => {
   });
 };
 
-export {generateTimeline};
+// export {};
+
+generateTimeline();
