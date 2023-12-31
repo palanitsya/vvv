@@ -2,3 +2,6 @@
 // import './vendor/swiper';
 import './vendor/focus-visible-polyfill';
 import './vendor/scroll.js';
+// import generateTimeline from './vendor/generate-timeline.js';
+
+// generateTimeline();

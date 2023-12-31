@@ -42,10 +42,12 @@ mixin footer(footerMods)
       },
     ]
 
-  footer.footer(class=footerMods)#main-footer(data-section-animation, data-start="150 bottom", data-end="bottom bottom")
+  footer.footer(class=footerMods)#main-footer
+    //- (data-section-animation, data-start="150 bottom", data-end="bottom bottom")
     .footer__waves
       +icon("wave-footer", "100%", "100%", true)
-    .container(data-animation="y: 150, opacity: 0", data-animation-direction='from')
+    .container
+      //- (data-animation="y: 150, opacity: 0", data-animation-direction='from')
       .footer__grid
         .footer__first-column
           +logo()
