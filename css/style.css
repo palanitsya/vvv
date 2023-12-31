@@ -659,7 +659,6 @@ button,
 .header {
   z-index: 2;
   color: #ffffff;
-  background-color: rgba(255, 0, 0, 0.1);
   -webkit-transition: height 0.3s ease;
   transition: height 0.3s ease;
 }
@@ -2479,15 +2478,15 @@ button,
 
 .video {
   position: relative;
-  border-radius: 12px 12px 0 0;
-  background-color: #ffffff;
-  -webkit-clip-path: inset(1px 1px);
-  clip-path: inset(1px 1px);
   overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 12px 12px 0 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-clip-path: inset(1px 1px);
+  clip-path: inset(1px 1px);
 }
 
 .video__video {
@@ -2503,10 +2502,10 @@ button,
 
 .video::before {
   content: "";
-  z-index: 1;
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
   background: -webkit-gradient(linear, left top, right top, from(#0cbaf1), to(#e95ce9));
@@ -2522,19 +2521,19 @@ button,
 
 .video__btn-wrapper {
   position: absolute;
-  left: 0;
   top: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   pointer-events: none;
 }
 
@@ -2542,19 +2541,19 @@ button,
   z-index: 3;
   width: 100px;
   height: 100px;
+  margin: 0 auto;
   padding: 0;
+  background-color: transparent;
   border: none;
   border-radius: 50%;
-  background-color: transparent;
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
   cursor: pointer;
   -webkit-transition: width 0.3s ease, height 0.3s ease, -webkit-transform 0.3s ease;
   transition: width 0.3s ease, height 0.3s ease, -webkit-transform 0.3s ease;
   transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease;
   transition: width 0.3s ease, height 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
-  margin: 0 auto;
   pointer-events: all;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 .video__play-btn svg {
@@ -2584,12 +2583,12 @@ button,
 }
 
 .video__description {
-  z-index: 2;
   position: absolute;
   top: 0;
-  left: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2607,8 +2606,8 @@ button,
 .video__description-text {
   margin-top: 9px;
   font-size: 36px;
-  font-weight: 500;
   line-height: 44px;
+  font-weight: 500;
   letter-spacing: -0.72px;
 }
 
@@ -4927,8 +4926,8 @@ button,
 
   .video__description-text {
     font-size: 20px;
-    font-weight: 500;
     line-height: 1.3;
+    font-weight: 500;
   }
 
   .our-pricing__grid {
